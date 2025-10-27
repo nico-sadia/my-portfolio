@@ -13,7 +13,7 @@ export default function Link({
     const isExternal = href.startsWith("http");
     const style = className
         ? className
-        : "underline hover:text-gray-400 underline-offset-2";
+        : "underline hover:text-lime-500 underline-offset-2";
     if (isExternal) {
         return (
             <a

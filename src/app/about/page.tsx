@@ -1,17 +1,37 @@
+import Link from "@/components/ui/Link";
 import { R2_BASE_URL } from "@/lib/constants";
 import Image from "next/image";
 
 export default function About() {
     return (
-        <main className="space-y-8">
-            <section className="space-y-2">
+        <main className="space-y-4">
+            <section className="flex flex-row gap-4">
                 <Image
                     src={`${R2_BASE_URL}/nico.dev/icons/Nico-Sadia-PFP.jpg`}
                     alt="Portrait of Nico Sadia"
                     width={250}
                     height={250}
                 />
-                <h1 className="font-semibold my-4">hi, i'm nico.</h1>
+                <div className="flex flex-col gap-1">
+                    <h2 className="font-semibold">links:</h2>
+                    <ul className="space-y-1">
+                        <li>
+                            <Link href="https://github.com/nico-sadia">
+                                github
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="https://www.linkedin.com/in/nico-sadia/">
+                                linkedin
+                            </Link>
+                        </li>
+                    </ul>
+                    <h2 className="font-semibold">contact:</h2>
+                    <p>email: nicosadia17@gmail.com</p>
+                </div>
+            </section>
+            <section className="space-y-2">
+                <h1 className="font-semibold">hi, i'm nico.</h1>
                 <p>
                     i am a computer science student at the univeristy of surrey,
                     based in england. i have a deep passion for coding and
