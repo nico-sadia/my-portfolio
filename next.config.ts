@@ -10,6 +10,8 @@ const nextConfig: NextConfig = {
             },
         ],
     },
+    pageExtensions: ["js", "jsx", "ts", "tsx"],
 };
 
+// Merge MDX config with Next.js config
 export default nextConfig;

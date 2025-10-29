@@ -25,9 +25,9 @@ export default function RootLayout({
             className={`bg-white text-black ${libreBaskerville.className}`}
         >
             <body className="p-6 flex min-h-screen flex-col items-center bg-white text-black gap-y-6">
-                <div className="flex flex-row h-full justify-center gap-4">
+                <div className="flex flex-row h-full justify-center gap-4 w-5/8 ">
                     <Sidebar />
-                    <div className="flex flex-col space-y-2 text-sm h-full bg-white w-3/7">
+                    <div className="flex flex-col space-y-3 text-sm h-full bg-white w-4/5">
                         <PageHeader />
                         {children}
                     </div>

@@ -1,6 +1,6 @@
 export default function Home() {
     return (
-        <main className="space-y-8">
+        <main>
             <section>
                 <h1 className="font-semibold mb-2">welcome to my website :)</h1>
                 <p>

@@ -2,9 +2,10 @@
 export default {
     content: ["./src/**/*.{js,ts,jsx,tsx}"],
     theme: {
-        fontFamily: {
-            body: ["Lora", "serif"],
-            heading: ["Playfair Display", "serif"],
+        extend: {
+            fontFamily: {
+                mono: ["var(--font-mono)", "monospace"],
+            },
         },
     },
     plugins: [],

@@ -4,12 +4,12 @@ import { usePathname } from "next/navigation";
 
 export default function Sidebar() {
     const links = ["home", "projects", "about", "journal", "changelog"];
-    const pathName = usePathname() === "/" ? "/home" : usePathname();
-    console.log(pathName);
+    const rawPath = usePathname();
+    const pathName = rawPath === "/" ? "/home" : "/" + rawPath.split("/")[1];
 
     return (
         <nav className="flex flex-col w-48 rounded-xs h-full">
-            <h1 className="font-bold text-xl mb-4">Nico Sadia</h1>
+            <h1 className="font-bold text-xl mb-4">nico sadia</h1>
             <ul>
                 {links.map((link) => (
                     <li className="hover:bg-gray-200" key={link}>
