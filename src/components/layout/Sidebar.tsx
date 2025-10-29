@@ -8,8 +8,9 @@ export default function Sidebar() {
     const pathName = rawPath === "/" ? "/home" : "/" + rawPath.split("/")[1];
 
     return (
-        <nav className="flex flex-col w-48 rounded-xs h-full">
+        <nav className="flex flex-col w-48 rounded-xs h-full space-y-2">
             <h1 className="font-bold text-xl mb-4">nico sadia</h1>
+
             <ul>
                 {links.map((link) => (
                     <li className="hover:bg-gray-200" key={link}>

@@ -1,6 +1,8 @@
 import Footer from "@/components/layout/Footer";
 import PageHeader from "@/components/layout/PageHeader";
 import Sidebar from "@/components/layout/Sidebar";
+import ThemeToggle from "@/components/layout/ThemeToggle";
+import { ThemeProvider } from "next-themes";
 import { Libre_Baskerville } from "next/font/google";
 import "./globals.css";
 
@@ -22,17 +24,23 @@ export default function RootLayout({
     return (
         <html
             lang="en"
-            className={`bg-white text-black ${libreBaskerville.className}`}
+            className={`bg-neutral-50 dark:bg-neutral-900 dark:text-white text-black ${libreBaskerville.className} transition-all duration-300`}
+            suppressHydrationWarning
         >
-            <body className="p-6 flex min-h-screen flex-col items-center bg-white text-black gap-y-6">
-                <div className="flex flex-row h-full justify-center gap-4 w-5/8 ">
-                    <Sidebar />
-                    <div className="flex flex-col space-y-3 text-sm h-full bg-white w-4/5">
-                        <PageHeader />
-                        {children}
+            <body className="p-6 flex min-h-screen flex-col items-center gap-y-6 overflow-hidden">
+                <ThemeProvider attribute="class">
+                    <div className="flex flex-row h-full justify-center gap-4 w-5/8 ">
+                        <Sidebar />
+                        <div className="flex flex-col space-y-3 text-sm h-full w-4/5">
+                            <div className="flex flex-row justify-between items-center">
+                                <PageHeader />
+                                <ThemeToggle />
+                            </div>
+                            {children}
+                        </div>
                     </div>
-                </div>
-                <Footer />
+                    <Footer />
+                </ThemeProvider>
             </body>
         </html>
     );
