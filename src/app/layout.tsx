@@ -4,7 +4,9 @@ import Sidebar from "@/components/layout/Sidebar";
 import ThemeToggle from "@/components/layout/ThemeToggle";
 import { ThemeProvider } from "next-themes";
 import { Libre_Baskerville } from "next/font/google";
+import { Suspense } from "react";
 import "./globals.css";
+import LoadingScreen from "./loading";
 
 const libreBaskerville = Libre_Baskerville({
     subsets: ["latin"],
@@ -36,7 +38,9 @@ export default function RootLayout({
                                 <PageHeader />
                                 <ThemeToggle />
                             </div>
-                            {children}
+                            <Suspense fallback={<LoadingScreen />}>
+                                {children}
+                            </Suspense>
                         </div>
                     </div>
                     <Footer />

@@ -9,6 +9,7 @@ type ProjectDetailsProps = {
 };
 
 export default async function ProjectDetails({ params }: ProjectDetailsProps) {
+    await new Promise((r) => setTimeout(r, 3000));
     const slug = (await params).slug;
     const project = getProjectBySlug(slug);
 
