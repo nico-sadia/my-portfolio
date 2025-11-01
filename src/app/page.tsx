@@ -1,3 +1,5 @@
+import ContactModal from "@/features/contact/ContactModal";
+
 export default function Home() {
     return (
         <main>
@@ -8,6 +10,7 @@ export default function Home() {
                     surrey.
                 </p>
                 <p>this site is a collection of my work and notes.</p>
+                <ContactModal />
             </section>
         </main>
     );

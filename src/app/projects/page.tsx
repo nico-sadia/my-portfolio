@@ -1,4 +1,4 @@
-import ProjectCard from "@/components/projects/ProjectCard";
+import ProjectCard from "@/features/projects/ProjectCard";
 import { getAllProjectsMeta } from "@/lib/projects";
 
 export default function Projects() {

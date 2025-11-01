@@ -1,4 +1,5 @@
 import Link from "@/components/ui/Link";
+import ContactModal from "@/features/contact/ContactModal";
 import { R2_BASE_URL } from "@/lib/constants";
 import Image from "next/image";
 
@@ -12,9 +13,9 @@ export default function About() {
                     width={250}
                     height={250}
                 />
-                <div className="flex flex-col gap-1">
-                    <h2 className="font-semibold">links:</h2>
+                <div className="flex flex-col gap-2">
                     <ul className="space-y-1">
+                        <h2 className="font-semibold">links:</h2>
                         <li>
                             <Link href="https://github.com/nico-sadia">
                                 github
@@ -26,8 +27,7 @@ export default function About() {
                             </Link>
                         </li>
                     </ul>
-                    <h2 className="font-semibold">contact:</h2>
-                    <p>email: nicosadia17@gmail.com</p>
+                    <ContactModal />
                 </div>
             </section>
             <section className="space-y-2">

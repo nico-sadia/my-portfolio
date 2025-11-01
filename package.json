@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@formspree/react": "^3.0.0",
     "@tailwindcss/postcss": "^4.1.16",
     "@types/tailwindcss": "^3.0.11",
     "gray-matter": "^4.0.3",
