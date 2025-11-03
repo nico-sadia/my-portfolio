@@ -9,7 +9,6 @@ type ProjectDetailsProps = {
 };
 
 export default async function ProjectDetails({ params }: ProjectDetailsProps) {
-    await new Promise((r) => setTimeout(r, 3000));
     const slug = (await params).slug;
     const project = getProjectBySlug(slug);
 
@@ -18,8 +17,8 @@ export default async function ProjectDetails({ params }: ProjectDetailsProps) {
     const html = md.render(project.content);
 
     return (
-        <article>
-            <h1>{project.title}</h1>
+        <article className="space-y-2">
+            <h1 className="font-semibold">{project.title}</h1>
             <div dangerouslySetInnerHTML={{ __html: html }} />
         </article>
     );

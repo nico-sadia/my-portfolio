@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 
 export default function LoadingScreen() {
-    const [dots, setDots] = useState("");
+    const [dots, setDots] = useState(". . .");
 
     useEffect(() => {
         const interval = setInterval(() => {
