@@ -1,4 +1,4 @@
-import ContactModal from "@/features/contact/ContactModal";
+import ContactModal from "../features/contact/ContactModal";
 
 export default function Home() {
     return (

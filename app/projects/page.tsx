@@ -1,5 +1,5 @@
-import ProjectCard from "@/features/projects/ProjectCard";
-import { getAllProjectsMeta } from "@/lib/projects";
+import ProjectCard from "../../features/projects/ProjectCard";
+import { getAllProjectsMeta } from "../../lib/projects";
 
 export default function Projects() {
     const projects = getAllProjectsMeta();

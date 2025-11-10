@@ -1,13 +1,13 @@
+import fs from "fs";
+import matter from "gray-matter";
+import path from "path";
 import type {
     ProjectMeta,
     ProjectMetaWithContent,
     ProjectMetaWithSlug,
-} from "@/types";
-import fs from "fs";
-import matter from "gray-matter";
-import path from "path";
+} from "../types";
 
-const PROJECTS_DIR = path.join(process.cwd(), "src/content/projects");
+const PROJECTS_DIR = path.join(process.cwd(), "/content/projects");
 
 const extractProjectMatter = (slug: string) => {
     const filePath = path.join(PROJECTS_DIR, `${slug}.md`);

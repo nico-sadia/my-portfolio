@@ -1,6 +1,6 @@
-import Link from "@/components/ui/Link";
-import { ProjectMetaWithSlug } from "@/types";
 import Image from "next/image";
+import Link from "../../components/ui/Link";
+import { ProjectMetaWithSlug } from "../../types";
 
 type ProjectCardProps = {
     project: ProjectMetaWithSlug;

@@ -1,10 +1,10 @@
-import Footer from "@/components/layout/Footer";
-import PageHeader from "@/components/layout/PageHeader";
-import Sidebar from "@/components/layout/Sidebar";
-import ThemeToggle from "@/components/layout/ThemeToggle";
 import { ThemeProvider } from "next-themes";
 import { Libre_Baskerville } from "next/font/google";
 import { Suspense } from "react";
+import Footer from "../components/layout/Footer";
+import PageHeader from "../components/layout/PageHeader";
+import Sidebar from "../components/layout/Sidebar";
+import ThemeToggle from "../components/layout/ThemeToggle";
 import "./globals.css";
 import LoadingScreen from "./loading";
 

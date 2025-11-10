@@ -1,6 +1,6 @@
-import Link from "@/components/ui/Link";
-import { R2_BASE_URL } from "@/lib/constants";
 import Image from "next/image";
+import Link from "../components/ui/Link";
+import { R2_BASE_URL } from "../lib/constants";
 
 export default function NotFound() {
     return (

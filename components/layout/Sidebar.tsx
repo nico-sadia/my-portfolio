@@ -1,6 +1,6 @@
 "use client";
-import Link from "@/components/ui/Link";
 import { usePathname } from "next/navigation";
+import Link from "../ui/Link";
 
 export default function Sidebar() {
     const links = ["home", "projects", "about", "journal", "changelog"];

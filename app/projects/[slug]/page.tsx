@@ -1,6 +1,6 @@
-import { getProjectBySlug } from "@/lib/projects";
 import MarkdownIt from "markdown-it";
 import { notFound } from "next/navigation";
+import { getProjectBySlug } from "../../../lib/projects";
 
 const md = new MarkdownIt();
 

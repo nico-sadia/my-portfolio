@@ -1,7 +1,7 @@
-import Link from "@/components/ui/Link";
-import ContactModal from "@/features/contact/ContactModal";
-import { R2_BASE_URL } from "@/lib/constants";
 import Image from "next/image";
+import Link from "../../components/ui/Link";
+import ContactModal from "../../features/contact/ContactModal";
+import { R2_BASE_URL } from "../../lib/constants";
 
 export default function About() {
     return (

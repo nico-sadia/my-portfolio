@@ -1,9 +1,9 @@
 "use client";
 
-import Button from "@/components/ui/Button";
-import Textarea from "@/components/ui/Textarea";
-import TextInput from "@/components/ui/TextInput";
 import { useForm } from "@formspree/react";
+import Button from "../../components/ui/Button";
+import Textarea from "../../components/ui/Textarea";
+import TextInput from "../../components/ui/TextInput";
 import ValidationErrorText from "./ValidationErrorText";
 
 const formspreeId = "xovpkblb";
