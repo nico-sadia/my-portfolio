@@ -34,3 +34,8 @@ interface CommitTree {
     url: string;
     sha: string;
 }
+
+export interface EntryDetail {
+    sha: string;
+    message: string;
+}

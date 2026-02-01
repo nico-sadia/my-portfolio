@@ -1,21 +1,28 @@
-type ChangelogEntryProps = {
-    date: string;
-    sha: string;
-    message: string;
-};
+import Link from "../../components/ui/Link";
+import { EntryDetail } from "../../types/github/commits";
 
-export default function ChangelogEntry({
-    date,
-    sha,
-    message,
-}: ChangelogEntryProps) {
+type ChangelogEntryProps = { date: string; entries: EntryDetail[] };
+
+export default function ChangelogEntry({ date, entries }: ChangelogEntryProps) {
     return (
-        <div className="flex flex-col">
-            <div className="flex flex-row justify-between">
-                <h2 className="text-lg font-bold">{date}</h2>
-                <h4 className="text-xs">{sha}</h4>
-            </div>
-            <p>{message}</p>
+        <div>
+            <h2 className="text-xl font-bold">{date}</h2>
+            <ul className="list-disc pl-2">
+                {entries.map((e) => (
+                    <li key={e.sha} className="flex flex-row justify-between">
+                        <p>
+                            {">"} {e.message}
+                        </p>
+                        <span className="text-xs">
+                            <Link
+                                href={`https://github.com/nico-sadia/my-portfolio/commit/${e.sha}`}
+                            >
+                                {e.sha.substring(0, 7)}
+                            </Link>
+                        </span>
+                    </li>
+                ))}
+            </ul>
         </div>
     );
 }
