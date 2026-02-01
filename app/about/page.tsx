@@ -1,14 +1,14 @@
 import Image from "next/image";
 import Link from "../../components/ui/Link";
 import ContactModal from "../../features/contact/ContactModal";
-import { R2_BASE_URL } from "../../lib/constants";
+import { ASSETS } from "../../lib/constants";
 
 export default function About() {
     return (
         <main className="space-y-4">
             <section className="flex flex-row gap-4">
                 <Image
-                    src={`${R2_BASE_URL}/nico.dev/icons/Nico-Sadia-PFP.jpg`}
+                    src={ASSETS.ICONS.NICO.PFP}
                     alt="Portrait of Nico Sadia"
                     width={250}
                     height={250}
@@ -33,38 +33,30 @@ export default function About() {
             <section className="space-y-2">
                 <h1 className="font-semibold">hi, i'm nico.</h1>
                 <p>
-                    i am a computer science student at the univeristy of surrey,
-                    based in england. i have a deep passion for coding and
-                    building projects that are both practical and enjoyable to
-                    create.
+                    i study computer science at the univeristy of surrey, based
+                    in england. i love coding, especially web development.
                 </p>
                 <p>
-                    as a child, i have always loved gaming and in particular,
-                    games that utilised your creativity. when i was introduced
-                    to scratch, a platform where you could build your own games
-                    from nothing, i was fascinated. later, i moved on to unity,
-                    my first instance of writing actual code. i hated it at
-                    first - it was a giant step up from drag-and-drop code
-                    blocks - but once i was able to understand the basics and
-                    bring my ideas to life, i couldn't stop.
+                    i started programming in 2020; my first complete and working
+                    project was a simple quiz using C#. today, i am focused on
+                    developing full stack web applications that are both fun to
+                    create and practical.
                 </p>
                 <p>
-                    these days, my main interest is now in developing full stack
-                    web apps, prioritising maintainability and good practices
-                    wherever i can. recently, i have been focusing on an
-                    automated spotify song saver - a project that brings
-                    together several technologies, you can check it out in the
-                    projects section of this website!
+                    outside of coding, i regularly go gym + runs and dabble in
+                    guitar. my most played game at the moment is tft (
+                    <Link href="https://www.metatft.com/player/euw/nota-1806">
+                        my account
+                    </Link>
+                    ), but my favourite game of all time is definitely terraria.
+                    i have always been a huge fan of pokemon too and have
+                    recently started collecting cards {"->"}
                 </p>
                 <p>
-                    outside of coding, i love to stay active by regularly going
-                    gym and on runs. I still of course indulge in gaming, but
-                    more on a casual level compared to my younger self.
+                    feel free to reach out using the contact form if you'd like
+                    to get in touch. thanks for stopping by :)
                 </p>
-                <p>
-                    feel free to reach out via email if you'd like to get in
-                    touch. thanks for stopping by :)
-                </p>
+                <p className="text-[8px] mt-8">also watch jojo's 👍</p>
             </section>
         </main>
     );

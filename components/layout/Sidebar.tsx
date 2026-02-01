@@ -3,7 +3,14 @@ import { usePathname } from "next/navigation";
 import Link from "../ui/Link";
 
 export default function Sidebar() {
-    const links = ["home", "projects", "about", "journal", "changelog"];
+    const links = [
+        "home",
+        "projects",
+        "about",
+        "journal",
+        "pokemon",
+        "changelog",
+    ];
     const rawPath = usePathname();
     const pathName = rawPath === "/" ? "/home" : "/" + rawPath.split("/")[1];
 
