@@ -12,6 +12,7 @@
     "@formspree/react": "^3.0.0",
     "@tailwindcss/postcss": "^4.1.16",
     "@types/tailwindcss": "^3.0.11",
+    "date-fns": "^4.1.0",
     "gray-matter": "^4.0.3",
     "markdown-it": "^14.1.0",
     "next": "15.5.6",

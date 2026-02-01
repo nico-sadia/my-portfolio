@@ -1,11 +1,20 @@
+import { formatDistanceToNow } from "date-fns";
 import ChangelogList from "../../features/changelog/ChangelogList";
+import ChangelogStats from "../../features/changelog/ChangelogStats";
 import { GITHUB_REPO_COMMIT_READ_URL } from "../../lib/constants";
 import { CommitHistory } from "../../types/github/commits";
 
 export default async function Changelog() {
     const commitHistory = await getCommitHistory();
     return (
-        <main>
+        <main className="space-y-6">
+            <ChangelogStats
+                commitCount={commitHistory.length}
+                lastUpdate={formatDistanceToNow(
+                    commitHistory[0].commit.author.date,
+                    { addSuffix: true },
+                )}
+            />
             <ChangelogList commitHistory={commitHistory} />
         </main>
     );
