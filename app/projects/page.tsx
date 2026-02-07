@@ -1,15 +1,15 @@
-import ProjectCard from "../../features/projects/ProjectCard";
+import ProjectCard from "../../features/projects/components/ProjectCard";
 import { getAllProjectsMeta } from "../../lib/projects";
 
 export default function Projects() {
-    const projects = getAllProjectsMeta();
-    return (
-        <main>
-            <section className="grid grid-cols-2 gap-4">
-                {projects.map((project) => {
-                    return <ProjectCard project={project} key={project.id} />;
-                })}
-            </section>
-        </main>
-    );
+  const projects = getAllProjectsMeta();
+  return (
+    <main>
+      <section className="grid grid-cols-2 gap-4">
+        {projects.map((project) => {
+          return <ProjectCard project={project} key={project.id} />;
+        })}
+      </section>
+    </main>
+  );
 }
