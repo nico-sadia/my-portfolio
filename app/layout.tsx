@@ -31,7 +31,7 @@ export default function RootLayout({
         >
             <body className="p-6 flex min-h-screen flex-col items-center gap-y-6 overflow-x-hidden">
                 <ThemeProvider attribute="class">
-                    <div className="flex flex-row h-full justify-center gap-4 w-5/8 ">
+                    <div className="flex flex-row h-full justify-center gap-4 lg:w-5/8 ">
                         <Sidebar />
                         <div className="flex flex-col space-y-6 text-sm h-full w-4/5">
                             <div className="flex flex-row justify-between items-center">
