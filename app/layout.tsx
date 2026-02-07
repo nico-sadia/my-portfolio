@@ -26,7 +26,7 @@ export default function RootLayout({
     return (
         <html
             lang="en"
-            className={`bg-neutral-50 dark:bg-neutral-900 dark:text-white text-black ${libreBaskerville.className} transition-all duration-300`}
+            className={`bg-neutral-50 dark:bg-neutral-900 dark:text-white text-black ${libreBaskerville.className} md:text-xs text-sm transition-all duration-300`}
             suppressHydrationWarning
         >
             <body className="p-6 flex min-h-screen flex-col items-center gap-y-6 overflow-x-hidden">
