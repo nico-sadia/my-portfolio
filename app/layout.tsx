@@ -26,18 +26,18 @@ export default function RootLayout({
     return (
         <html
             lang="en"
-            className={`bg-neutral-50 dark:bg-neutral-900 dark:text-white text-black ${libreBaskerville.className} md:text-xs text-sm transition-all duration-300`}
+            className={`bg-neutral-50 dark:bg-neutral-900 dark:text-white text-black ${libreBaskerville.className} md:text-sm text-md transition-all duration-300`}
             suppressHydrationWarning
         >
-            <body className="p-6 flex min-h-screen flex-col items-center gap-y-6 overflow-x-hidden">
+            <body className="p-6 flex min-h-screen w-screen flex-col items-center gap-y-6 overflow-x-hidden">
                 <ThemeProvider attribute="class">
-                    <div className="flex flex-row h-full justify-center gap-4 lg:w-5/8 ">
+                    <div className="flex flex-row h-full justify-center gap-4 w-5/8">
                         <Sidebar />
-                        <div className="flex flex-col space-y-6 text-sm h-full w-4/5">
-                            <div className="flex flex-row justify-between items-center">
-                                <PageHeader />
+                        <div className="flex flex-col space-y-6 w-full h-full">
+                            <PageHeader />
+                            <span className="absolute top-0 right-0 md:m-6 m-2">
                                 <ThemeToggle />
-                            </div>
+                            </span>
                             <Suspense fallback={<LoadingScreen />}>
                                 {children}
                             </Suspense>

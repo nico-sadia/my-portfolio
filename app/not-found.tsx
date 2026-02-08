@@ -4,7 +4,15 @@ import { R2_BASE_URL } from "../lib/constants";
 
 export default function NotFound() {
     return (
-        <div className="flex flex-row gap-12">
+        <div className="flex flex-row gap-8 flex-wrap">
+            <div className="w-80 md:w-100 lg:w-120">
+                <Image
+                    src={`${R2_BASE_URL}/nico.dev/misc/robot_404.png`}
+                    alt="Error 404 Robot"
+                    width={300}
+                    height={300}
+                />
+            </div>
             <div className="flex flex-col justify-center">
                 <h2 className="font-semibold">error 404</h2>
                 <h2>
@@ -15,12 +23,6 @@ export default function NotFound() {
                     {">"} return home {"<"}
                 </Link>
             </div>
-            <Image
-                src={`${R2_BASE_URL}/nico.dev/misc/robot_404.png`}
-                alt="Error 404 Robot"
-                width={300}
-                height={300}
-            />
         </div>
     );
 }
