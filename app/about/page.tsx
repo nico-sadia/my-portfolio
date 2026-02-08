@@ -33,7 +33,7 @@ export default function About() {
                 </div>
             </section>
             <section className="space-y-2">
-                <h1 className="font-semibold">hi, i'm nico.</h1>
+                <h1 className="font-semibold">hi, i{"'"}m nico.</h1>
                 <p>
                     i study computer science at the univeristy of surrey, based
                     in england. i love coding, especially web development.
@@ -55,8 +55,8 @@ export default function About() {
                     recently started collecting cards {"->"}
                 </p>
                 <p>
-                    feel free to reach out using the contact form if you'd like
-                    to get in touch. thanks for stopping by :)
+                    feel free to reach out using the contact form if you{"'"}d
+                    like to get in touch. thanks for stopping by :{")"}
                 </p>
                 <p className="text-[8px] mt-8">also watch jjba 👍</p>
             </section>
