@@ -32,7 +32,7 @@ export default function Sidebar() {
             >
                 <aside id="main-sidebar">
                     <div className="flex flex-row font-bold text-xl mb-4 justify-between">
-                        <h1>nico sadia</h1>
+                        <h1 className="text-2xl">nico sadia</h1>
                         <button
                             className={`transition-all duration-200 hover:bg-neutral-200 rounded-md p-1 block lg:hidden`}
                             onClick={() => setOpen(!isOpen)}
