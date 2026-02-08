@@ -15,7 +15,7 @@ export default function Modal({ buttonText, children }: ModalProps) {
 
             {open && (
                 <div
-                    className="fixed inset-0 flex items-center justify-center bg-black/30 backdrop-blur-sm z-50"
+                    className="fixed inset-0 flex items-center justify-center bg-black/10 backdrop-blur-sm z-50"
                     onClick={() => setOpen(false)}
                 >
                     <div

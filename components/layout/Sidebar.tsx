@@ -28,7 +28,7 @@ export default function Sidebar() {
                 <MdMenu className="md:h-7.5 md:w-7.5 h-6 w-6" />
             </button>
             <div
-                className={`${isOpen ? "translate-x-0" : "-translate-x-full"} fixed p-6 top-0 left-0 h-screen w-60 transform lg:translate-x-0 -translate-x-full bg-neutral-50 dark:bg-neutral-900 dark:text-white text-black transition-all duration-300`}
+                className={`${isOpen ? "translate-x-0 border-r-2 shadow-2xl" : "-translate-x-full"} z-50 fixed p-6 top-0 left-0 h-screen w-60 transform lg:translate-x-0 -translate-x-full bg-neutral-50 dark:bg-neutral-900 dark:text-white text-black transition-all duration-300`}
             >
                 <aside id="main-sidebar">
                     <div className="flex flex-row font-bold text-xl mb-4 justify-between">
@@ -45,7 +45,9 @@ export default function Sidebar() {
                             <li
                                 className="hover:bg-button-hover-light dark:hover:bg-button-hover-dark"
                                 key={link}
-                                onClick={() => setOpen(!isOpen)}
+                                onClick={() =>
+                                    setOpen(isOpen ? !isOpen : isOpen)
+                                }
                             >
                                 <Link
                                     href={`/${link === "home" ? "" : link}`}
@@ -61,6 +63,10 @@ export default function Sidebar() {
                     </ul>
                 </aside>
             </div>
+            <div
+                className={`${isOpen ? "inset-0 fixed bg-black/10 backdrop-blur-sm z-0 h-screen w-screen" : "hidden"}`}
+                onClick={() => setOpen(isOpen ? !isOpen : isOpen)}
+            ></div>
         </>
     );
 }
