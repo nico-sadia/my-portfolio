@@ -29,6 +29,9 @@ export default function RootLayout({
             className={`bg-neutral-50 dark:bg-neutral-900 dark:text-white text-black ${libreBaskerville.className} sm:text-sm md:text-md text-xs transition-all duration-300`}
             suppressHydrationWarning
         >
+            <head>
+                <meta name="apple-mobile-web-app-title" content="nico sadia" />
+            </head>
             <body className="p-6 flex min-h-screen w-screen flex-col items-center gap-y-6 overflow-x-hidden">
                 <ThemeProvider attribute="class">
                     <div className="flex flex-row h-full justify-center gap-4 w-5/6 lg:w-4/7">
