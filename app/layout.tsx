@@ -14,7 +14,7 @@ const libreBaskerville = Libre_Baskerville({
 });
 
 export const metadata = {
-    title: "nico.dev",
+    title: "nicosadia.me",
     description: "Personal site of Nico Sadia",
 };
 

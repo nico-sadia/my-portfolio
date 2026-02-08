@@ -6,7 +6,7 @@ export default function PageHeader() {
     const title = pathName === "/" ? "home" : pathName.replace("/", "");
     return (
         <h1 className="text-lg font-bold">
-            <span className="text-xl">{title}</span> {"//"} nico.dev
+            <span className="text-xl">{title}</span> {"//"} nicosadia.me
         </h1>
     );
 }
