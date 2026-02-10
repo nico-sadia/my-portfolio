@@ -1,15 +1,59 @@
-import ProjectCard from "../../features/projects/components/ProjectCard";
-import { getAllProjectsMeta } from "../../lib/projects";
+import { promises as fs } from "fs";
+import { compileMDX } from "next-mdx-remote/rsc";
+import Image from "next/image";
+import path from "path";
+import Link from "../../components/ui/Link";
+import { ProjectMeta } from "../../types";
 
-export default function Projects() {
-  const projects = getAllProjectsMeta();
-  return (
-    <main>
-      <section className="grid grid-cols-2 gap-4">
-        {projects.map((project) => {
-          return <ProjectCard project={project} key={project.id} />;
-        })}
-      </section>
-    </main>
-  );
+export default async function Projects() {
+    const projects = await getProjectsData();
+    console.log("projects", projects);
+    return (
+        <main>
+            <ul>
+                {projects.map((p) => {
+                    return (
+                        <li
+                            key={p.id}
+                            className="flex flex-row items-center gap-4"
+                        >
+                            <Image
+                                src={p.icon}
+                                width={12}
+                                height={12}
+                                alt="Portrait of Nico Sadia"
+                            />
+                            <Link
+                                href={`projects/${p.fileName.replace(".mdx", "")}`}
+                            >
+                                {p.title}
+                            </Link>
+                        </li>
+                    );
+                })}
+            </ul>
+        </main>
+    );
 }
+
+const getProjectsData = async () => {
+    const fileNames = await fs.readdir(
+        path.join(process.cwd(), "content/projects"),
+        "utf-8",
+    );
+    const projectData = await Promise.all(
+        fileNames.map(async (fileName) => {
+            const source = await fs.readFile(
+                path.join(process.cwd(), "content/projects", fileName),
+                "utf-8",
+            );
+
+            const { frontmatter } = await compileMDX<ProjectMeta>({
+                source,
+                options: { parseFrontmatter: true },
+            });
+            return { fileName, ...frontmatter };
+        }),
+    );
+    return projectData;
+};

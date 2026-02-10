@@ -8,6 +8,9 @@ export const ASSETS = {
         NICO: {
             PFP: `${R2_BASE_URL}/nico.dev/icons/Nico-Sadia-PFP.jpg`,
         },
+        SPOTIFY: {
+            PRIMARY: `${R2_BASE_URL}/nico.dev/icons/Spotify_Primary_Logo_RGB_Green.png`,
+        },
     },
     POKEMON: {
         PULLS: {

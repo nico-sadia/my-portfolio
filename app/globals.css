@@ -5,3 +5,5 @@
     --color-link-hover: var(--color-lime-500);
 }
 @custom-variant dark (&:where(.dark, .dark *));
+
+@plugin "@tailwindcss/typography";

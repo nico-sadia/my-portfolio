@@ -13,8 +13,9 @@ const libreBaskerville = Libre_Baskerville({
     weight: ["400", "700"],
 });
 
+const siteName = "nicosadia.me";
 export const metadata = {
-    title: "nicosadia.me",
+    title: { template: `%s | ${siteName}`, default: siteName },
     description: "Personal site of Nico Sadia",
 };
 
