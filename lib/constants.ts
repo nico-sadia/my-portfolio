@@ -11,6 +11,7 @@ export const ASSETS = {
         SPOTIFY: {
             PRIMARY: `${R2_BASE_URL}/nico.dev/icons/Spotify_Primary_Logo_RGB_Green.png`,
         },
+        CRON: `${R2_BASE_URL}/nico.dev/icons/cron-job-logo.jpg`,
     },
     POKEMON: {
         PULLS: {

@@ -10,7 +10,7 @@ export default async function Projects() {
     console.log("projects", projects);
     return (
         <main>
-            <ul>
+            <ul className="grid gap-1">
                 {projects.map((p) => {
                     return (
                         <li
@@ -19,9 +19,10 @@ export default async function Projects() {
                         >
                             <Image
                                 src={p.icon}
-                                width={12}
-                                height={12}
+                                width={16}
+                                height={16}
                                 alt="Portrait of Nico Sadia"
+                                className="rounded-full"
                             />
                             <Link
                                 href={`projects/${p.fileName.replace(".mdx", "")}`}
