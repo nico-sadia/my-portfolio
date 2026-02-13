@@ -1,6 +1,9 @@
 import { promises as fs } from "fs";
 import { compileMDX } from "next-mdx-remote/rsc";
 import path from "path";
+import Link from "../../../components/ui/Link";
+import { ASSETS } from "../../../lib/constants";
+import { useMDXComponents } from "../../../mdx-components";
 import { ProjectMeta } from "../../../types";
 
 export const generateMetadata = async ({
@@ -36,12 +39,16 @@ export default async function Projects({
 
     const { content, frontmatter } = await compileMDX<ProjectMeta>({
         source,
-        options: { parseFrontmatter: true },
+        options: { parseFrontmatter: true, scope: { ASSETS } },
+        components: useMDXComponents(),
     });
 
     return (
         <div className="wrapper">
-            <h1>{frontmatter.title}</h1>
+            <div className="flex flex-row items-center justify-between">
+                <h1 className="font-bold">{frontmatter.title}</h1>
+                <Link href={frontmatter.github}>Github</Link>
+            </div>
             {content}
         </div>
     );

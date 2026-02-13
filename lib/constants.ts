@@ -4,21 +4,24 @@ export const R2_BASE_URL =
     "https://pub-280f09da048d460093e78e545200c0e6.r2.dev";
 
 export const ASSETS = {
-    ICONS: {
-        NICO: {
-            PFP: `${R2_BASE_URL}/nico.dev/icons/Nico-Sadia-PFP.jpg`,
+    icons: {
+        nicoPfp: `${R2_BASE_URL}/nico.dev/icons/Nico-Sadia-PFP.jpg`,
+        spotifyPrimary: `${R2_BASE_URL}/nico.dev/icons/Spotify_Primary_Logo_Green.png`,
+        cronJob: `${R2_BASE_URL}/nico.dev/icons/cron-job-logo.jpg`,
+        github: {
+            white: `${R2_BASE_URL}/nico.dev/icons/GitHub_Invertocat_White.svg`,
+            black: `${R2_BASE_URL}/nico.dev/icons/GitHub_Invertocat_Black.svg`,
         },
-        SPOTIFY: {
-            PRIMARY: `${R2_BASE_URL}/nico.dev/icons/Spotify_Primary_Logo_RGB_Green.png`,
-        },
-        CRON: `${R2_BASE_URL}/nico.dev/icons/cron-job-logo.jpg`,
     },
-    POKEMON: {
-        PULLS: {
-            SV: {
-                MEW: {
-                    VENUPOLI: `${R2_BASE_URL}/nico.dev/pokemon/IMG_1117.jpeg`,
-                    SPREAD: `${R2_BASE_URL}/nico.dev/pokemon/IMG_1116.jpeg`,
+    diagrams: {
+        spotifySaverSequence: `${R2_BASE_URL}/nico.dev/diagrams/spotify-saver-sequence-diagram.svg`,
+    },
+    pokemon: {
+        pulls: {
+            sv: {
+                mew: {
+                    venuPoli: `${R2_BASE_URL}/nico.dev/pokemon/IMG_1117.jpeg`,
+                    spread: `${R2_BASE_URL}/nico.dev/pokemon/IMG_1116.jpeg`,
                 },
             },
         },

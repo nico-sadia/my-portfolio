@@ -7,13 +7,13 @@ export default function Pokemon() {
             <h1>pokemon yeahhhh</h1>
             <div className="flex flex-row gap-8">
                 <Image
-                    src={ASSETS.POKEMON.PULLS.SV.MEW.SPREAD}
+                    src={ASSETS.pokemon.pulls.sv.mew.spread}
                     alt="151 pack spread"
                     width={250}
                     height={250}
                 />
                 <Image
-                    src={ASSETS.POKEMON.PULLS.SV.MEW.VENUPOLI}
+                    src={ASSETS.pokemon.pulls.sv.mew.venuPoli}
                     alt="Venusaur and Poliwhirl 151 pull"
                     width={250}
                     height={250}
