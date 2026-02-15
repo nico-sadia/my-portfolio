@@ -1,35 +1,31 @@
+import IconButton from "@/components/ui/IconButton";
+import Link from "@/components/ui/Link";
+import ContactModal from "@/features/contact/components/ContactModal";
+import { ASSETS } from "@/lib/constants";
+import { Github, LinkedIn } from "@/svg/index";
 import Image from "next/image";
-import Link from "../../components/ui/Link";
-import ContactModal from "../../features/contact/components/ContactModal";
-import { ASSETS } from "../../lib/constants";
 
 export default function About() {
     return (
         <main className="space-y-4">
-            <section className="flex flex-row">
-                <span className="w-40 md:w-50 lg:w-80">
-                    <Image
-                        src={ASSETS.icons.nicoPfp}
-                        alt="Portrait of Nico Sadia"
-                        width={250}
-                        height={250}
-                    />
-                </span>
+            <section className="flex flex-row gap-4">
+                <Image
+                    src={ASSETS.icons.nicoPfp}
+                    alt="Portrait of Nico Sadia"
+                    className="w-40 md:w-50 lg:w-80"
+                    width={250}
+                    height={250}
+                />
+
                 <div className="flex flex-col gap-4">
-                    <Link href="https://github.com/nico-sadia">
-                        <span className="w-5 md:w-20 lg:w-20">
-                            <Image
-                                src={ASSETS.icons.github.black}
-                                alt="Github logo"
-                                width={24}
-                                height={24}
-                                className="dark:invert hover:scale-110 fill-lime-500 transition-all duration-150"
-                            />
-                        </span>
-                    </Link>
-                    <Link href="https://www.linkedin.com/in/nico-sadia/">
-                        linkedin
-                    </Link>
+                    <IconButton
+                        href="https://github.com/nico-sadia"
+                        icon={<Github />}
+                    />
+                    <IconButton
+                        href="https://www.linkedin.com/in/nico-sadia/"
+                        icon={<LinkedIn />}
+                    />
 
                     <ContactModal />
                 </div>

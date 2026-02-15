@@ -1,8 +1,10 @@
+import { IconKey } from "@/lib/iconMap";
+
 export type ProjectMeta = {
     id: string;
     title: string;
     github: string;
-    icon: string;
+    icon: IconKey;
 };
 
 export type ProjectMetaWithSlug = ProjectMeta & {

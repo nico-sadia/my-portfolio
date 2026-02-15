@@ -1,10 +1,10 @@
+import Link from "@/components/ui/Link";
+import { ASSETS } from "@/lib/constants";
+import { useMDXComponents } from "@/mdx-components";
+import { ProjectMeta } from "@/types";
 import { promises as fs } from "fs";
 import { compileMDX } from "next-mdx-remote/rsc";
 import path from "path";
-import Link from "../../../components/ui/Link";
-import { ASSETS } from "../../../lib/constants";
-import { useMDXComponents } from "../../../mdx-components";
-import { ProjectMeta } from "../../../types";
 
 export const generateMetadata = async ({
     params,

@@ -3,15 +3,20 @@ import { ReactNode, useState } from "react";
 import Button from "./Button";
 
 type ModalProps = {
-    buttonText: string;
+    buttonText?: string;
+    icon?: ReactNode;
     children: ReactNode;
 };
 
-export default function Modal({ buttonText, children }: ModalProps) {
+export default function Modal({ buttonText, children, icon }: ModalProps) {
     const [open, setOpen] = useState<boolean>(false);
     return (
         <>
-            <Button onClick={() => setOpen(true)}>{buttonText}</Button>
+            {buttonText && (
+                <Button onClick={() => setOpen(true)}>{buttonText}</Button>
+            )}
+
+            {icon && <span>{icon}</span>}
 
             {open && (
                 <div

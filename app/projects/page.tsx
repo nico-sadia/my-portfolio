@@ -1,6 +1,6 @@
+import { ICON_MAP } from "@/lib/iconMap";
 import { promises as fs } from "fs";
 import { compileMDX } from "next-mdx-remote/rsc";
-import Image from "next/image";
 import path from "path";
 import Link from "../../components/ui/Link";
 import { ProjectMeta } from "../../types";
@@ -12,18 +12,13 @@ export default async function Projects() {
         <main>
             <ul className="grid gap-1">
                 {projects.map((p) => {
+                    const Icon = ICON_MAP[p.icon];
                     return (
                         <li
                             key={p.id}
-                            className="flex flex-row items-center gap-4"
+                            className="flex flex-row items-center gap-2"
                         >
-                            <Image
-                                src={p.icon}
-                                width={16}
-                                height={16}
-                                alt="Portrait of Nico Sadia"
-                                className="rounded-full"
-                            />
+                            {Icon && <Icon className="size-6" />}
                             <Link
                                 href={`projects/${p.fileName.replace(".mdx", "")}`}
                             >
