@@ -50,23 +50,27 @@ export default async function Projects({
 
     return (
         <div className="w-3/4">
-            <div className="not-prose flex flex-row items-center justify-between gap-6 flex-wrap bg-lime-200 dark:bg-lime-900 p-6 rounded-lg">
-                <h1 className="font-bold text-lime-500 text-4xl">
-                    {frontmatter.title}
-                </h1>
+            <div className="not-prose flex flex-col gap-4 bg-lime-200 dark:bg-lime-900 p-6 rounded-lg">
+                <div className="flex flex-row items-center">
+                    <h1 className="font-bold text-lime-500 text-4xl">
+                        {frontmatter.title}
+                    </h1>
 
-                <span className="flex flex-row gap-4">
-                    {githubLinks.map((link, i) => (
-                        <span
-                            key={i}
-                            className="flex flex-col gap-1 justify-between items-center"
-                        >
-                            <p className="text-sm">{link.label}</p>
-                            <IconButton icon={<Github />} href={link.url} />
-                        </span>
-                    ))}
-                </span>
-                <p className="italic text-lg">{frontmatter.description}</p>
+                    <span className="flex flex-row gap-4 ml-auto">
+                        {githubLinks.map((link, i) => (
+                            <span
+                                key={i}
+                                className="flex flex-col gap-1 justify-between items-center"
+                            >
+                                <p className="text-sm">{link.label}</p>
+                                <IconButton icon={<Github />} href={link.url} />
+                            </span>
+                        ))}
+                    </span>
+                </div>
+                {frontmatter.description && (
+                    <p className="italic text-lg">{frontmatter.description}</p>
+                )}
             </div>
             {content}
         </div>

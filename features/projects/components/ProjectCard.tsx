@@ -18,7 +18,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             <h1 className="font-semibold text-md mb-1">{project.title}</h1>
 
             <Link href={`projects/${project.slug}`}>read more</Link>
-            <Link href={project.github}>github</Link>
+            {/* <Link href={project.github}>github</Link> */}
         </div>
     );
 }
