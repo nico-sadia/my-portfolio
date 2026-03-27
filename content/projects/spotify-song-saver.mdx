@@ -1,13 +1,48 @@
 ---
 id: spotify-song-saver
 title: Spotify Song Saver
-github: https://github.com/nico-sadia/spotify-song-saver
+github:
+    - label: Frontend
+      url: https://github.com/nico-sadia/spotify-song-saver
+    - label: Backend
+      url: https://github.com/nico-sadia/dsss-cron
 icon: spotifyGreen
+description: Full-stack web application that saves your most played song of the day to a chosen playlist.
 ---
 
-_Music is very important to me - it's how a focus and relax. But my taste changes **a lot**. One day I will repeat a song over 100 times, then a week later skip it instantly when it comes on. To keep track of this, I built this app._
+## Idea and goal
 
-## Technologies used
+Music is very important to me - it's how a focus and relax. But my taste changes <span className='text-lg'>**a lot**</span>.
+One day I will repeat a song over 100 times, then a week later skip it instantly when it comes on.
+So, I decided to save the song I played the most during that day to a playlist to track this behaviour.
+I was consistent with this initially, but soon after I started to stop as either I forgot or was simply too lazy.
+Automation was the solution to this; It allows me to not do anything but see a new song added to my playlist each day.
+
+## Cron jobs
+
+The first question I set myself to solve was _**how**_ would I automate this.
+After a bit of research, I discovered about Cron jobs - time based schedulers used to automate repetitive tasks.
+This was perfect for my use case as I would be running a script daily.
+Initially, I assumed that I host my own cron jobs, but fortunately, [cron-job.org](https://cron-job.org/en/) does this, completely free.
+
+To create a cron job you have to provide two parameters, a URL endpoint and a cron schedule expression.
+The URL endpoint is pinged by the cron service to execute code on the server and the schedule provides how often this happens.
+
+{/* #### Example cron job creation using [cron-job.org](https://cron-job.org/en/) */}
+
+```js
+{
+  "url": "http://example.com",
+  "schedule": "30 10 15 * *", // Every 15th of the month at 10:30 AM
+}
+```
+
+## Designing the application
+
+Next was to design and implement the web application that the cron jobs will interact with.
+Listed below is the stack and technologies that I decided to use.
+
+### Technologies used
 
 - Next.js
 - React
@@ -17,12 +52,65 @@ _Music is very important to me - it's how a focus and relax. But my taste change
 - PostgreSQL
 - Cron jobs
 
-## How it works
-
-<img
+<Figure
     src={ASSETS.diagrams.spotifySaverSequence}
     alt="Spotify song saver sequence diagram"
+    caption="Spotify song saver sequence diagram"
     width={1200}
-    height={900}
-    className="dark:invert"
+    height={800}
+    invert={true}
 />
+
+This visualizes how my application interacts in sequential order, from logging in with Spotify to saving the top song to the selected playlist.
+
+Essentially, my server will handle all communication with external services such as APIs and my database, whereas the client side and cron jobs will only serve as the trigger for these actions.
+
+## Backend
+
+To build my backend, I followed the **Controller-Service-Repository** architecture.
+Essentially, the controller will handle all incoming HTTP requests, conducting validation and then calling upon the respective services which contain all the business logic.
+If the service requires database interaction, then it calls upon the repository layer, which handles all this behaviour.
+After that, an appropiate response is sent back with a corresponding HTTP code and data if required.
+
+In my previous projects, I didn't really enforce any sort of architecture, which in the long run, really harmed my scalability and my ability to understand the codebase if I were to return to it after a while.
+However, by implementing this pattern, it really helped with this issue as it encourages code modularity and reusability.
+
+## Frontend
+
+My frontend was not an essential part of my project since the only requirement I needed from it was to allow users to choose a playlist to save their daily song to.
+Therefore, I haven't finished nor deployed my frontend as of yet but I definitely plan to in the future.
+See photos below for I have made so far:
+
+<Figure
+    src={ASSETS.screenshots.spotifySaverLanding}
+    alt="Spotify song saver landing page"
+    caption="Landing page"
+    width={1200}
+    height={800}
+/>
+
+<Figure
+    src={ASSETS.screenshots.spotifySaverDashboard}
+    alt="Spotify song saver dashboard"
+    caption="Dashboard"
+    width={1200}
+    height={800}
+/>
+<Figure
+    src={ASSETS.screenshots.spotifySaverHistory}
+    alt="Spotify song saver listening history"
+    caption="Listening history"
+    width={1200}
+    height={800}
+/>
+<Figure
+    src={ASSETS.screenshots.spotifySaverSettings}
+    alt="Spotify song saver settings page"
+    caption="Settings page"
+    width={1200}
+    height={800}
+/>
+
+I made all of these pages using my own components styled with TailwindCSS and I tried to account for responsiveness and accessibility.
+Although I was able to somewhat accomplish this, it did take a lot of time which I could have spent working on extra functionality.
+Next time, I will certainly give component libraries a try.

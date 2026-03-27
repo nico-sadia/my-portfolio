@@ -39,7 +39,7 @@ export default function RootLayout({
                         <Sidebar />
                         <div className="flex flex-col space-y-6 w-full h-full">
                             <PageHeader />
-                            <span className="absolute top-0 right-0 md:m-6 m-2">
+                            <span className="fixed top-0 right-0 md:m-6 m-2">
                                 <ThemeToggle />
                             </span>
                             <Suspense fallback={<LoadingScreen />}>
