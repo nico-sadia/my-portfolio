@@ -31,30 +31,30 @@ export default function About() {
                 </div>
             </section>
             <section className="space-y-2">
-                <h1 className="font-semibold">hi, i{"'"}m nico.</h1>
+                <h1 className="font-semibold">hello, i{"'"}m nico.</h1>
                 <p>
                     i study computer science at the univeristy of surrey, based
                     in england. i love coding, especially web development.
                 </p>
                 <p>
-                    i started programming in 2020; my first complete and working
+                    i started programming in 2020, my first complete and working
                     project was a simple quiz using C#. today, i am focused on
                     developing full stack web applications that are both fun to
                     create and practical.
                 </p>
                 <p>
-                    outside of coding, i regularly go gym + runs and dabble in
-                    guitar. my most played game at the moment is tft (
+                    outside of coding, i regularly go gym and sometimes run. my
+                    most played game at the moment is tft (
                     <Link href="https://www.metatft.com/player/euw/nota-1806">
                         my account
                     </Link>
                     ), but my favourite game of all time is definitely terraria.
                     i have always been a huge fan of pokemon too and have
-                    recently started collecting cards {"->"}
+                    recently started collecting cards.
                 </p>
                 <p>
                     feel free to reach out using the contact form if you{"'"}d
-                    like to get in touch. thanks for stopping by :{")"}
+                    like to get in touch. thanks for stopping by!
                 </p>
                 <p className="text-[8px] mt-8">also watch jjba 👍</p>
             </section>

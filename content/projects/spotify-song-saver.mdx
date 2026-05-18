@@ -10,6 +10,21 @@ icon: spotifyGreen
 description: Full-stack web application that saves your most played song of the day to a chosen playlist.
 ---
 
+## Playlist
+
+<iframe
+    style={{ borderRadius: "12px" }}
+    src="https://open.spotify.com/embed/playlist/5lVq9kkR5cgq9ravHblz7g?utm_source=generator&theme=0"
+    width="100%"
+    height="152"
+    frameBorder="0"
+    allowFullScreen
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+    loading="lazy"
+/>
+
+[Link](https://open.spotify.com/playlist/5lVq9kkR5cgq9ravHblz7g?si=69d8cce530e24b72)
+
 ## Idea and goal
 
 Music is very important to me - it's how a focus and relax. But my taste changes <span className='text-lg'>**a lot**</span>.
@@ -68,7 +83,7 @@ Essentially, my server will handle all communication with external services such
 ## Backend
 
 To build my backend, I followed the **Controller-Service-Repository** architecture.
-Essentially, the controller will handle all incoming HTTP requests, conducting validation and then calling upon the respective services which contain all the business logic.
+The controller will handle all incoming HTTP requests, conducting validation and then calling upon the respective services that contain all the required business logic.
 If the service requires database interaction, then it calls upon the repository layer, which handles all this behaviour.
 After that, an appropiate response is sent back with a corresponding HTTP code and data if required.
 
@@ -79,7 +94,7 @@ However, by implementing this pattern, it really helped with this issue as it en
 
 My frontend was not an essential part of my project since the only requirement I needed from it was to allow users to choose a playlist to save their daily song to.
 Therefore, I haven't finished nor deployed my frontend as of yet but I definitely plan to in the future.
-See photos below for I have made so far:
+See photos below for what I have made so far:
 
 <Figure
     src={ASSETS.screenshots.spotifySaverLanding}
@@ -113,4 +128,15 @@ See photos below for I have made so far:
 
 I made all of these pages using my own components styled with TailwindCSS and I tried to account for responsiveness and accessibility.
 Although I was able to somewhat accomplish this, it did take a lot of time which I could have spent working on extra functionality.
-Next time, I will certainly give component libraries a try.
+Next time, I will definitely give component libraries a try as they already have these features accounted for.
+
+## Conclusion
+
+I really enjoyed creating this project as it was something that I built around a personal need rather than something contrived.
+Being my first complete and working application, I have learnt a lot about what it takes to create a full stack system.
+From implementing backend architecture, working with a real database, handling session based authentication, designing my frontend pages and much, much more.
+
+Going forward, I do believe that this concept does have many potential users, but unfortunately Spotify makes it effectively impossible to scale.
+At the moment, my app is in development mode, which means it is limited to 5 authenticated users.
+The extended quota access lifts this restriction but to obtain this, developers must have a minimum of 250,000 monthly active users and a legally registered business entity.
+So sadly for now, this app only works as a personal tool, and reaching a wider audience would require the unlikely chance that Spotify significantly loosens these restrictions.
