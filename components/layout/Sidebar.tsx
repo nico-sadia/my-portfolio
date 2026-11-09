@@ -11,7 +11,6 @@ export default function Sidebar() {
         "projects",
         "about",
         "journal",
-        "pokemon",
         "changelog",
     ];
     const rawPath = usePathname();

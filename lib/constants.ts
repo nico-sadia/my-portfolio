@@ -36,16 +36,6 @@ export const ASSETS = {
             "screenshots/spotify-saver-settings.webp",
         ),
     },
-    pokemon: {
-        pulls: {
-            sv: {
-                mew: {
-                    venuPoli: r2NicoAsset("pokemon/IMG_1117.jpeg"),
-                    spread: r2NicoAsset("pokemon/IMG_1116.jpeg"),
-                },
-            },
-        },
-    },
 };
 
 // Github
