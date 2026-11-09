@@ -43,7 +43,8 @@ export default function About() {
                     different kinds of software engineering areas.
                 </p>
                 <p>
-                    Outside of that, I regularly go gym and I play a lot of tft{" "}
+                    As for my personal hobbies, I regularly go gym and play a
+                    lot of tft{" "}
                     <Link href="https://www.metatft.com/player/euw/nota-1806">
                         My profile
                     </Link>
