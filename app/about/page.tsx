@@ -31,32 +31,24 @@ export default function About() {
                 </div>
             </section>
             <section className="space-y-2">
-                <h1 className="font-semibold">hello, i{"'"}m nico.</h1>
+                <h1 className="font-semibold">Hello, I{"'"}m Nico.</h1>
                 <p>
-                    i study computer science at the univeristy of surrey, based
-                    in england. i love coding, especially web development.
+                    I am a final year student studying Computer Science at the
+                    University of Surrey, interested in software engineering and
+                    open to graduate roles.
                 </p>
                 <p>
-                    i started programming in 2020, my first complete and working
-                    project was a simple quiz using C#. today, i am focused on
-                    developing full stack web applications that are both fun to
-                    create and practical.
+                    Most of my personal project work so far has been building
+                    web applications but I am very keen and open to exploring
+                    different kinds of software engineering areas.
                 </p>
                 <p>
-                    outside of coding, i regularly go gym and sometimes run. my
-                    most played game at the moment is tft (
+                    Outside of that, I regularly go gym and I play a lot of tft{" "}
                     <Link href="https://www.metatft.com/player/euw/nota-1806">
-                        my account
+                        My profile
                     </Link>
-                    ), but my favourite game of all time is definitely terraria.
-                    i have always been a huge fan of pokemon too and have
-                    recently started collecting cards.
                 </p>
-                <p>
-                    feel free to reach out using the contact form if you{"'"}d
-                    like to get in touch. thanks for stopping by!
-                </p>
-                <p className="text-[8px] mt-8">also watch jjba 👍</p>
+                <p>Thanks for stopping by!</p>
             </section>
         </main>
     );
