@@ -14,7 +14,7 @@ export default function ThemeToggle() {
             onClick={() =>
                 setTheme(resolvedTheme === "dark" ? "light" : "dark")
             }
-            className="flex h-11 w-11 items-center justify-center rounded-xl bg-neutral-200 transition-colors duration-200 hover:bg-neutral-300 dark:bg-neutral-800 dark:hover:bg-neutral-700"
+            className="flex h-11 w-11 items-center justify-center rounded-xl bg-neutral-200 transition-colors duration-300 hover:bg-neutral-300 dark:bg-neutral-800 dark:hover:bg-neutral-700"
         >
             <MdOutlineLightMode className="hidden h-6 w-6 rotate-90 dark:block dark:rotate-0" />
             <MdOutlineDarkMode className="block h-6 w-6 rotate-0 dark:hidden dark:-rotate-90" />

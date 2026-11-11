@@ -26,14 +26,19 @@ export default function RootLayout({
     return (
         <html
             lang="en"
-            className={`bg-neutral-50 dark:bg-neutral-900 dark:text-white text-black ${libreBaskerville.className} text-sm sm:text-base transition-all duration-300`}
+            className={`bg-neutral-50 dark:bg-neutral-900 dark:text-white text-black ${libreBaskerville.className} text-sm sm:text-base transition-colors duration-300`}
             suppressHydrationWarning
         >
             <head>
                 <meta name="apple-mobile-web-app-title" content="nico sadia" />
             </head>
             <body className="flex min-h-screen w-screen flex-col items-center gap-y-6 overflow-x-clip px-4 pb-6 sm:px-6 sm:pb-6">
-                <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+                <ThemeProvider
+                    attribute="class"
+                    defaultTheme="system"
+                    enableSystem
+                    disableTransitionOnChange
+                >
                     <div className="flex flex-row h-full justify-center gap-4 w-full lg:w-4/7">
                         <div className="flex flex-col space-y-6 w-full h-full">
                             <SiteHeader />
