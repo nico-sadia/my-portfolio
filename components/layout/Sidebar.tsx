@@ -1,8 +1,8 @@
 "use client";
 import { usePathname } from "next/navigation";
 import { IoMdClose } from "react-icons/io";
-import ThemeToggle from "./ThemeToggle";
 import Link from "../ui/Link";
+import ThemeToggle from "./ThemeToggle";
 
 type SidebarProps = {
     isOpen: boolean;
@@ -10,13 +10,7 @@ type SidebarProps = {
 };
 
 export default function Sidebar({ isOpen, onClose }: SidebarProps) {
-    const links = [
-        "home",
-        "projects",
-        "about",
-        "journal",
-        "changelog",
-    ];
+    const links = ["home", "projects", "about", "journal", "changelog"];
     const rawPath = usePathname();
     const pathName = rawPath === "/" ? "/home" : "/" + rawPath.split("/")[1];
 
@@ -50,14 +44,16 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                                 >
                                     {link}
                                     {pathName === `/${link}` && (
-                                        <span className="ml-auto pl-4">{"<"}</span>
+                                        <span className="ml-auto pl-4">
+                                            {"<"}
+                                        </span>
                                     )}
                                 </Link>
                             </li>
                         ))}
                     </ul>
                     <div className="mt-6 flex items-center justify-between border-t border-neutral-300 pt-4 dark:border-neutral-700">
-                        <span className="text-sm">Appearance</span>
+                        <span className="text-sm">appearance</span>
                         <ThemeToggle />
                     </div>
                 </aside>

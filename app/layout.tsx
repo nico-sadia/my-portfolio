@@ -32,7 +32,7 @@ export default function RootLayout({
             <head>
                 <meta name="apple-mobile-web-app-title" content="nico sadia" />
             </head>
-            <body className="flex min-h-screen w-screen flex-col items-center gap-y-6 overflow-x-hidden px-4 py-6 sm:p-6">
+            <body className="flex min-h-screen w-screen flex-col items-center gap-y-6 overflow-x-clip px-4 pb-6 sm:px-6 sm:pb-6">
                 <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
                     <div className="flex flex-row h-full justify-center gap-4 w-full lg:w-4/7">
                         <div className="flex flex-col space-y-6 w-full h-full">
