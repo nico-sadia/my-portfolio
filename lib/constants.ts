@@ -15,11 +15,21 @@ export const ASSETS = {
         },
     },
     diagrams: {
+        ecodashEmissionsFlow: r2NicoAsset(
+            "diagrams/emissions-flow.png",
+        ),
         spotifySaverSequence: r2NicoAsset(
             "diagrams/spotify-saver-sequence-diagram.svg",
         ),
     },
     screenshots: {
+        ecodashSiteMap: r2NicoAsset("screenshots/site-map.png"),
+        ecodashEmissionsCalculator: r2NicoAsset(
+            "screenshots/emissions-calculator-form.png",
+        ),
+        ecodashDepartmentChat: r2NicoAsset(
+            "screenshots/department-chat.png",
+        ),
         cronJobCreationSettings: r2NicoAsset(
             "screenshots/cron_job_creation_settings.png",
         ),

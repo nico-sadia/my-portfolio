@@ -1,0 +1,85 @@
+---
+id: ecodash
+title: EcoDash
+github: []
+icon: eco
+description: A sustainability tracking platform for businesses, developed by a six-person team.
+---
+
+## Project overview
+
+EcoDash (Eco Dashboard Toolkit) was a group project to build a sustainability tracking platform for businesses. Environmental data such as energy use, water consumption, waste and carbon emissions can be scattered across spreadsheets and separate tools, making progress difficult to track. Our application aimed to bring that information together so businesses could track their environmental impact, set sustainability targets, monitor progress and compare performance across departments.
+
+## Planning and design
+
+Our team met weekly with our project sponsor to review progress and clarify requirements. With a short development window, we used MoSCoW prioritisation to focus first on the must-have features: authentication, a sustainability dashboard and basic data storage. Some secondary ideas, including gamification and notifications, were descoped. The project also required external API integrations, online deployment and a real-time feature, which shaped the system we planned. We created diagrams and design artefacts to map out the application before development. The sitemap below shows the planned navigation and the different areas for employees and supervisors.
+
+<Figure
+    src={ASSETS.screenshots.ecodashSiteMap}
+    alt="EcoDash sitemap showing the landing page, employee and supervisor areas, and the application's main sections"
+    caption="The sitemap helped the team plan navigation and separate role-specific features."
+    width={901}
+    height={202}
+/>
+
+## How EcoDash works
+
+EcoDash used session-based authentication to keep users signed in between requests. Access was tied to each user's role: employees and supervisors saw different areas, and role-restricted pages and actions checked that role before allowing access. Employees could request to join a company or department, while supervisors could review and accept or reject those requests.
+
+One supervisor workflow was the emissions calculator. A supervisor entered company and energy-use details, which the Django backend sent to the MyClimate API. EcoDash saved the returned estimate so it could be reviewed later, and users could open a previous calculation to see the submitted details.
+
+<Figure
+    src={ASSETS.diagrams.ecodashEmissionsFlow}
+    alt="Sequence diagram showing emissions data travelling from the client to the server, MyClimate API and database"
+    caption="The emissions-calculation flow between the client, Django server, MyClimate and the database."
+    width={1665}
+    height={931}
+/>
+
+<Figure
+    src={ASSETS.screenshots.ecodashEmissionsCalculator}
+    alt="EcoDash emissions calculator form beside the previous results panel"
+    caption="The calculator form and the panel for reviewing previous estimates."
+    width={1076}
+    height={528}
+/>
+
+Each department also had its own chat room. Department members exchanged messages over a WebSocket connection, so new messages appeared without refreshing the page. Messages were stored so users could revisit the conversation. Together, these flows show how EcoDash connected user roles, company data, an external emissions service and real-time communication.
+
+<Figure
+    src={ASSETS.screenshots.ecodashDepartmentChat}
+    alt="EcoDash department chat shown from supervisor and employee accounts"
+    caption="The department chat shown from supervisor and employee views."
+    width={1895}
+    height={888}
+/>
+
+## My contribution
+
+I led frontend development, setting up the project structure and navigation, creating reusable components and global styles, and building the landing, login and sign-up pages.
+
+I connected the emissions calculator form to the Django backend and formatted the returned results for display. I also added a page for viewing previous calculations and a reusable modal for their details.
+
+On the backend, I worked on cookie-based login and logout, role-restricted access, company and department features, department join requests, and the WebSocket chat. I also fixed the MyClimate API view and helped organise the backend views.
+
+## Technologies used
+
+- React
+- TypeScript
+- Tailwind CSS
+- Python
+- Django
+- Django Channels and WebSockets
+- MyClimate API
+
+## Scope and limitations
+
+Not every planned feature was complete by the deadline. The final report notes that the dashboard cards and charts were not connected to live data, so they did not show meaningful metrics. The emissions calculator and department chat were implemented, while connecting the dashboard to the saved sustainability data remained future work.
+
+## Reflection
+
+One of my biggest takeaways was learning to work with a team I had not met before towards a shared goal under a tight deadline. I found that intimidating at first, but our weekly meetings and collaboration made the process smoother than I expected. I finished the project more confident in group work, and our team was pleased with both the final outcome and our mark.
+
+The project also gave me the chance to work beyond the frontend technologies I already knew. Python and Django were new to me, so I had to research them as I contributed to the backend. Learning an unfamiliar framework in the context of a shared product was a useful experience and made me more comfortable picking up new tools.
+
+With more time, I would have prioritised connecting the dashboard to the sustainability data earlier and reserved more time for end-to-end integration. The dashboard was a core part of the original goal, but its cards and charts were not connected to live data by the deadline. I would make that integration milestone explicit earlier in the plan and check the complete user flows as the features came together.

@@ -1,10 +1,11 @@
 import { Logo, SpotifyGreen } from "@/svg";
-import { MdOutlineTimer } from "react-icons/md";
+import { MdEco, MdOutlineTimer } from "react-icons/md";
 
 export const ICON_MAP = {
     spotifyGreen: SpotifyGreen,
     logo: Logo,
     timer: MdOutlineTimer,
+    eco: MdEco,
 };
 
 export type IconKey = keyof typeof ICON_MAP;
