@@ -12,7 +12,7 @@ export default function About() {
                 <Image
                     src={ASSETS.icons.nicoPfp}
                     alt="Portrait of Nico Sadia"
-                    className="w-40 md:w-50 lg:w-80"
+                    className="w-48 sm:w-56 lg:w-80"
                     width={250}
                     height={250}
                 />

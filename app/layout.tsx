@@ -2,8 +2,7 @@ import { ThemeProvider } from "next-themes";
 import { Libre_Baskerville } from "next/font/google";
 import { Suspense } from "react";
 import Footer from "../components/layout/Footer";
-import PageHeader from "../components/layout/PageHeader";
-import Sidebar from "../components/layout/Sidebar";
+import SiteHeader from "../components/layout/SiteHeader";
 import ThemeToggle from "../components/layout/ThemeToggle";
 import "./globals.css";
 import LoadingScreen from "./loading";
@@ -27,21 +26,17 @@ export default function RootLayout({
     return (
         <html
             lang="en"
-            className={`bg-neutral-50 dark:bg-neutral-900 dark:text-white text-black ${libreBaskerville.className} sm:text-sm md:text-md text-xs transition-all duration-300`}
+            className={`bg-neutral-50 dark:bg-neutral-900 dark:text-white text-black ${libreBaskerville.className} text-sm sm:text-base transition-all duration-300`}
             suppressHydrationWarning
         >
             <head>
                 <meta name="apple-mobile-web-app-title" content="nico sadia" />
             </head>
-            <body className="p-6 flex min-h-screen w-screen flex-col items-center gap-y-6 overflow-x-hidden">
-                <ThemeProvider attribute="class">
-                    <div className="flex flex-row h-full justify-center gap-4 w-5/6 lg:w-4/7">
-                        <Sidebar />
+            <body className="flex min-h-screen w-screen flex-col items-center gap-y-6 overflow-x-hidden px-4 py-6 sm:p-6">
+                <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+                    <div className="flex flex-row h-full justify-center gap-4 w-full lg:w-4/7">
                         <div className="flex flex-col space-y-6 w-full h-full">
-                            <PageHeader />
-                            <span className="fixed top-0 right-0 md:m-6 m-2">
-                                <ThemeToggle />
-                            </span>
+                            <SiteHeader />
                             <Suspense fallback={<LoadingScreen />}>
                                 {children}
                             </Suspense>

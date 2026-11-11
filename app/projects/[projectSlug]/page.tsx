@@ -49,14 +49,14 @@ export default async function Projects({
         : [{ label: "Github", url: frontmatter.github }];
 
     return (
-        <div className="w-3/4">
+        <div className="w-full">
             <div className="not-prose flex flex-col gap-4 bg-lime-200 dark:bg-lime-900 p-6 rounded-lg">
-                <div className="flex flex-row items-center">
-                    <h1 className="font-bold text-lime-500 text-4xl">
+                <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center">
+                    <h1 className="whitespace-nowrap font-bold text-lime-500 text-3xl sm:text-4xl">
                         {frontmatter.title}
                     </h1>
 
-                    <span className="flex flex-row gap-4 ml-auto">
+                    <span className="flex flex-row gap-4 sm:ml-auto">
                         {githubLinks.map((link, i) => (
                             <span
                                 key={i}

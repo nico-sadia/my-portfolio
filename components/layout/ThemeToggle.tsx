@@ -4,15 +4,20 @@ import { useTheme } from "next-themes";
 import { MdOutlineDarkMode, MdOutlineLightMode } from "react-icons/md";
 
 export default function ThemeToggle() {
-    const { theme, setTheme } = useTheme();
+    const { resolvedTheme, setTheme } = useTheme();
 
     return (
         <button
-            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-            className="rounded-xl p-1 dark:hover:bg-neutral-700 hover:bg-neutral-300 bg-neutral-200 dark:bg-neutral-800"
+            type="button"
+            aria-label="Toggle color theme"
+            title="Toggle color theme"
+            onClick={() =>
+                setTheme(resolvedTheme === "dark" ? "light" : "dark")
+            }
+            className="flex h-11 w-11 items-center justify-center rounded-xl bg-neutral-200 transition-colors duration-200 hover:bg-neutral-300 dark:bg-neutral-800 dark:hover:bg-neutral-700"
         >
-            <MdOutlineLightMode className="md:h-7.5 md:w-7.5 h-6 w-6 rotate-90 hidden dark:rotate-0 dark:block" />
-            <MdOutlineDarkMode className="md:h-7.5 md:w-7.5 h-6 w-6 rotate-0 block dark:-rotate-90 dark:hidden" />
+            <MdOutlineLightMode className="hidden h-6 w-6 rotate-90 dark:block dark:rotate-0" />
+            <MdOutlineDarkMode className="block h-6 w-6 rotate-0 dark:hidden dark:-rotate-90" />
         </button>
     );
 }

@@ -18,13 +18,13 @@ export default function Figure({
     invert,
 }: FigureProps) {
     return (
-        <figure className="border-6 border-neutral-200 dark:border-neutral-800 rounded-lg space ">
+        <figure className="w-full min-w-0 overflow-hidden rounded-lg border-6 border-neutral-200 dark:border-neutral-800">
             <Image
                 src={src}
                 alt={alt}
                 width={width}
                 height={height}
-                className={invert ? "dark:invert" : ""}
+                className={`block h-auto w-full max-w-full ${invert ? "dark:invert" : ""}`}
             />
             <figcaption className="italic bg-neutral-200 dark:bg-neutral-800 pt-3 p-1.5 m-0!">
                 {caption}
