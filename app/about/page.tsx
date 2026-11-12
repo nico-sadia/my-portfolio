@@ -49,7 +49,6 @@ export default function About() {
                         My profile
                     </Link>
                 </p>
-                <p>Thanks for stopping by!</p>
             </section>
         </main>
     );
