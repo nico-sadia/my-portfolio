@@ -35,25 +35,30 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                         </button>
                     </div>
                     <ul className="space-y-1">
-                        {links.map((link) => (
-                            <li
-                                className="rounded-md hover:bg-button-hover-light dark:hover:bg-button-hover-dark"
-                                key={link}
-                                onClick={onClose}
-                            >
-                                <Link
-                                    href={`/${link === "home" ? "" : link}`}
-                                    className="flex min-h-11 w-full items-center rounded-md px-2 text-[16px] text-lime-500"
+                        {links.map((link) => {
+                            const href = `/${link === "home" ? "" : link}`;
+                            const isCurrentPage = rawPath === href;
+
+                            return (
+                                <li
+                                    className="rounded-md hover:bg-button-hover-light dark:hover:bg-button-hover-dark"
+                                    key={link}
+                                    onClick={isCurrentPage ? onClose : undefined}
                                 >
-                                    {link}
-                                    {pathName === `/${link}` && (
-                                        <span className="ml-auto pl-4">
-                                            {"<"}
-                                        </span>
-                                    )}
-                                </Link>
-                            </li>
-                        ))}
+                                    <Link
+                                        href={href}
+                                        className="flex min-h-11 w-full items-center rounded-md px-2 text-[16px] text-lime-500"
+                                    >
+                                        {link}
+                                        {pathName === `/${link}` && (
+                                            <span className="ml-auto pl-4">
+                                                {"<"}
+                                            </span>
+                                        )}
+                                    </Link>
+                                </li>
+                            );
+                        })}
                     </ul>
                     <p className="mt-auto pt-6 text-center text-sm text-gray-500">
                         © {new Date().getFullYear()} nico sadia

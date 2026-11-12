@@ -1,12 +1,22 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { MdMenu } from "react-icons/md";
+import { usePathname } from "next/navigation";
 import PageHeader from "./PageHeader";
 import Sidebar from "./Sidebar";
 
 export default function SiteHeader() {
     const [isOpen, setOpen] = useState(false);
+    const pathname = usePathname();
+    const previousPathname = useRef(pathname);
+
+    useEffect(() => {
+        if (previousPathname.current !== pathname) {
+            previousPathname.current = pathname;
+            setOpen(false);
+        }
+    }, [pathname]);
 
     return (
         <>
