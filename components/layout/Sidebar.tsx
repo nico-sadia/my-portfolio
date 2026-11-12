@@ -2,7 +2,6 @@
 import { usePathname } from "next/navigation";
 import { IoMdClose } from "react-icons/io";
 import Link from "../ui/Link";
-import ThemeToggle from "./ThemeToggle";
 
 type SidebarProps = {
     isOpen: boolean;
@@ -19,7 +18,11 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
             <div
                 className={`fixed left-0 top-0 z-50 h-screen w-60 transform bg-neutral-50 p-6 text-black transition-[transform,background-color,color] duration-300 dark:bg-neutral-900 dark:text-white lg:translate-x-0 ${isOpen ? "translate-x-0" : "-translate-x-full"}`}
             >
-                <aside id="main-sidebar" aria-label="Main navigation">
+                <aside
+                    id="main-sidebar"
+                    aria-label="Main navigation"
+                    className="flex h-full flex-col"
+                >
                     <div className="mb-4 flex flex-row items-center justify-between font-bold text-xl">
                         <h1 className="text-2xl">nico sadia</h1>
                         <button
@@ -52,10 +55,9 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                             </li>
                         ))}
                     </ul>
-                    <div className="mt-6 flex items-center justify-between border-t border-neutral-300 pt-4 dark:border-neutral-700">
-                        <span className="text-sm">appearance</span>
-                        <ThemeToggle />
-                    </div>
+                    <p className="mt-auto pt-6 text-center text-sm text-gray-500">
+                        © {new Date().getFullYear()} nico sadia
+                    </p>
                 </aside>
             </div>
             <div

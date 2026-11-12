@@ -1,9 +1,7 @@
 import { ThemeProvider } from "next-themes";
 import { Libre_Baskerville } from "next/font/google";
 import { Suspense } from "react";
-import Footer from "../components/layout/Footer";
 import SiteHeader from "../components/layout/SiteHeader";
-import ThemeToggle from "../components/layout/ThemeToggle";
 import "./globals.css";
 import LoadingScreen from "./loading";
 
@@ -35,6 +33,7 @@ export default function RootLayout({
             <body className="flex min-h-screen w-screen flex-col items-center gap-y-6 overflow-x-clip px-4 pb-6 sm:px-6 sm:pb-6">
                 <ThemeProvider
                     attribute="class"
+                    storageKey="nicosadia-theme"
                     defaultTheme="system"
                     enableSystem
                     disableTransitionOnChange
@@ -47,7 +46,6 @@ export default function RootLayout({
                             </Suspense>
                         </div>
                     </div>
-                    <Footer />
                 </ThemeProvider>
             </body>
         </html>
