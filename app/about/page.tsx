@@ -12,7 +12,7 @@ export default function About() {
                 <Image
                     src={ASSETS.icons.nicoPfp}
                     alt="Portrait of Nico Sadia"
-                    className="w-48 sm:w-56 lg:w-80"
+                    className="w-48 sm:w-56 lg:w-80 rounded-full"
                     width={250}
                     height={250}
                 />
@@ -46,7 +46,7 @@ export default function About() {
                     As for my personal hobbies, I regularly go gym and play a
                     lot of tft{" "}
                     <Link href="https://www.metatft.com/player/euw/nota-1806">
-                        My profile
+                        (my profile)
                     </Link>
                 </p>
             </section>

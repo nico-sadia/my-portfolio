@@ -15,9 +15,7 @@ export const ASSETS = {
         },
     },
     diagrams: {
-        ecodashEmissionsFlow: r2NicoAsset(
-            "diagrams/emissions-flow.png",
-        ),
+        ecodashEmissionsFlow: r2NicoAsset("diagrams/emissions-flow.png"),
         spotifySaverSequence: r2NicoAsset(
             "diagrams/spotify-saver-sequence-diagram.svg",
         ),
@@ -27,9 +25,7 @@ export const ASSETS = {
         ecodashEmissionsCalculator: r2NicoAsset(
             "screenshots/emissions-calculator-form.png",
         ),
-        ecodashDepartmentChat: r2NicoAsset(
-            "screenshots/department-chat.png",
-        ),
+        ecodashDepartmentChat: r2NicoAsset("screenshots/department-chat.png"),
         cronJobCreationSettings: r2NicoAsset(
             "screenshots/cron_job_creation_settings.png",
         ),
@@ -45,6 +41,9 @@ export const ASSETS = {
         spotifySaverSettings: r2NicoAsset(
             "screenshots/spotify-saver-settings.webp",
         ),
+    },
+    gallery: {
+        panorama: r2NicoAsset("gallery/panorama-optimized.jpg"),
     },
 };
 

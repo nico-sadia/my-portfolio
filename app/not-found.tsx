@@ -14,11 +14,8 @@ export default function NotFound() {
                 />
             </div>
             <div className="flex flex-col justify-center">
-                <h2 className="font-semibold">error 404</h2>
-                <h2>
-                    page not found{" "}
-                    <span className="text-xs">...or its still being built</span>
-                </h2>
+                <h2 className="font-semibold">404</h2>
+                <h2>Page not found </h2>
                 <Link href="/">
                     {">"} return home {"<"}
                 </Link>
