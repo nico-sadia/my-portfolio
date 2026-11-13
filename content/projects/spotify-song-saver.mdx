@@ -27,18 +27,18 @@ description: Full-stack web application that saves your most played song of the 
 
 ## Idea and goal
 
-Music is very important to me - it's how a focus and relax. But my taste changes <span className='text-lg'>**a lot**</span>.
+Music is very important to me - it's how I focus and relax. But my taste changes <span className='text-lg'>**a lot**</span>.
 One day I will repeat a song over 100 times, then a week later skip it instantly when it comes on.
 So, I decided to save the song I played the most during that day to a playlist to track this behaviour.
-I was consistent with this initially, but soon after I started to stop as either I forgot or was simply too lazy.
-Automation was the solution to this; It allows me to not do anything but see a new song added to my playlist each day.
+Initially, I was consistent doing this everyday, but I started to stop as either I forgot or was simply too lazy.
+Automation was the solution to this; It allows me to not do anything but still see a new song added to my playlist daily.
 
 ## Cron jobs
 
 The first question I set myself to solve was _**how**_ would I automate this.
 After a bit of research, I discovered about Cron jobs - time based schedulers used to automate repetitive tasks.
 This was perfect for my use case as I would be running a script daily.
-Initially, I assumed that I host my own cron jobs, but fortunately, [cron-job.org](https://cron-job.org/en/) does this, completely free.
+I assumed that I would need to host my own cron jobs, but fortunately, [cron-job.org](https://cron-job.org/en/) does this, completely free.
 
 To create a cron job you have to provide two parameters, a URL endpoint and a cron schedule expression.
 The URL endpoint is pinged by the cron service to execute code on the server and the schedule provides how often this happens.
@@ -93,7 +93,7 @@ However, by implementing this pattern, it really helped with this issue as it en
 ## Frontend
 
 My frontend was not an essential part of my project since the only requirement I needed from it was to allow users to choose a playlist to save their daily song to.
-Therefore, I haven't finished nor deployed my frontend as of yet but I definitely plan to in the future.
+Therefore, I haven't finished nor deployed my frontend but I definitely plan to in the future.
 See photos below for what I have made so far:
 
 <Figure
